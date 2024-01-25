@@ -2,85 +2,106 @@
 const name = ref("NAWIGACJA");
 </script>
 <template>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="https://bulma.io">
-      <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
-    </a>
-
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
-      <a class="navbar-item">
-        Home
-      </a>
-
-      <a class="navbar-item">
-        Documentation
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More
-        </a>
-
-        <div class="navbar-dropdown">
-          <a class="navbar-item">
-            About
-          </a>
-          <a class="navbar-item">
-            Jobs
-          </a>
-          <a class="navbar-item">
-            Contact
-          </a>
-          <hr class="navbar-divider">
-          <a class="navbar-item">
-            Report an issue
-          </a>
+  <link href='https://fonts.googleapis.com/css?family=Noto Sans KR' rel='stylesheet'>
+  <nav>
+    <div class="navbar">
+      <div class="logos">
+        <img src="./logo.png" alt="" />
+        <div class="socialsDiv">
+          <img src="./socials.png" alt="">
         </div>
       </div>
-    </div>
+      <div class="menu">
 
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="buttons">
-          <a class="button is-primary">
-            <strong>Sign up</strong>
-          </a>
-          <a class="button is-light">
-            Log in
-          </a>
-        </div>
+        <NuxtLink to="/"><span>O NAS</span></NuxtLink>
+
+        <nuxt-link to="/about"><span>BLOG</span></nuxt-link>
+        <a href="/about"><span>OPINIE</span></a>
+        <nuxt-link to="/articles/1"><span>KONTAKT</span></nuxt-link>
+
+        <button>Zaloguj</button>
+
+
       </div>
     </div>
-  </div>
-</nav>
-    <h1>{{ name }}</h1>
-    <ul>
-        <li><NuxtLink to="/">Strona główna</NuxtLink></li>
-        <li><nuxt-link to="/about">O nas (SPA)</nuxt-link></li>
-        <li class="mpa"><a href="/about">O nas (MPA)</a></li>
-        <li><nuxt-link to="/articles/1">Artykuł 1</nuxt-link></li>
-        <li><nuxt-link to="/articles/2">Artykuł 2</nuxt-link></li>
-    </ul>
+    <div class="line-1"></div>
+  </nav>
 </template>
 <style scoped lang="scss">
 h1 {
-    color: red;
+  color: red;
 }
 
 ul {
-    .mpa{
-        color: yellow
-    }
+  .mpa {
+    color: yellow
+  }
 
 }
 
+img {
+  width: 40%;
+
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+
+  button {
+    background-color: #DCA86F;
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    position: relative;
+    top: 30px;
+    right: 20px;
+    width: 170px;
+    height: 50px;
+    border-radius: 45px;
+  }
+
+
+}
+
+span {
+
+  position: relative;
+  top: 110px;
+  font-family: 'Noto Sans KR';
+
+  a {
+    text-decoration: none;
+
+  }
+
+  color: #6A6A6A;
+  font-weight: 900;
+  font-size: 24px;
+  margin: 50px;
+}
+
+.line-1 {
+  height: 39px;
+  background: black;
+  position: relative;
+  top: -10px;
+  z-index: 99;
+}
+
+.logos {
+  width: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-self: center;
+
+  .socialsDiv {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
+}
 </style>
